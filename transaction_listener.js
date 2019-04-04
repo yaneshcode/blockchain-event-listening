@@ -41,8 +41,34 @@ const transaction = async () => {
   console.log('Transaction Mined: ' + receipt.transactionHash);
   console.log(receipt);
 
-  // provider.waitForTransaction(transactionHash).then((receipt) => {
-  //     console.log('Transaction Mined: ' + receipt.hash);
+  // // With a timeout. a tx hash that never happened
+  // let receipt = new Promise((resolve, reject) => {
+  //
+  //   setTimeout(() => {
+  //       console.log("Timed Out");
+  //       reject(new Error('timeout'));
+  //   }, 5000)
+  //
+  //   provider.waitForTransaction("0x455a41412265ac2d1868fec8a4f3c196c646ba1de88844d26957a20066d31fa7").then((receipt) => {
+  //       console.log('Transaction Mined: ' + receipt.transactionHash);
+  //       console.log(receipt);
+  //
+  //       resolve({
+  //         receipt
+  //       });
+  //   });
+  //
+  //
+  //
+  // });
+  //
+  // receipt.then((value) => {
+  //   console.log(value);
+  // });
+
+
+  // provider.waitForTransaction("0x455a41412265ac2d1868fec8a4f3c196c646ba1de88844d26957a20066d31fa7").then((receipt) => {
+  //     console.log('Transaction Mined: ' + receipt.transactionHash);
   //     console.log(receipt);
   // });
 }
